@@ -1,0 +1,4 @@
+.DS_store
+scrapper/data
+scrapper/__pycache__
+scrapper/scrapper_env
