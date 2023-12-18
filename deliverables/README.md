@@ -27,7 +27,25 @@ Answers for deliverables 2 and 3 are stored in this same folder, within files `D
 - **`deliverable3.sql` File:**
   - Includes queries used to obtain answers for each question.
 
+## Data Lake
+For the Data Lake, S3 was used to store the output of the Scrapper tool. Same structure from original configuration was used, everything stored in a S3 bucket, and within a `raw/` folder. Afterwards, during the transformation phase, this folder would be read, focusing on the current date data files.
+
+![S3 Bucket](imgs/bucket.png)
+
+Overview of patitioned data per year/month/day:
+
+![Partitioning](imgs/partitioning.png)
+
+## Orchestrator
+AWS Step Functions and AWS EventBridge Schedules were used to orchestrate the ETL Data pipeline. 
+
+1. First step would be the simulated extraction of products details and sales faked data. 
+2. Then, the transformation was performed with a Lambda function (`Enroute-Nike-Transformer`), using a Python runtime with the Pandas package. In this same Lambda, Loading phase got also included with the Snowflake connector package.
+
+![Orchestrator](imgs/SF.png)
+
+
 ## Data Warehouse
 A **Snowflake** structure was used to define the tables. Only the required columns needed to answer the questions for deliverables were included in the data warehouse table structure. Here's a simple diagram that shows the relationships between tables:
 
-![Data Tables Structure](DW.drawio.png)
+![Data Tables Structure](imgs/DW.drawio.png)

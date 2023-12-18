@@ -36,7 +36,7 @@ resource "aws_lambda_function" "test_lambda" {
       DATABASE = "AWS_TEST"
       REGION = "us-east-1"
       SCHEMA = "PUBLIC"
-      WAREHOUSE = "ENROUTE_WH"
+      WAREHOUSE = "COMPUTE_WH"
     }
   }
 }
