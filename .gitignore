@@ -2,3 +2,9 @@
 scrapper/data
 scrapper/__pycache__
 scrapper/scrapper_env
+scrapper/myenv
+*.zip
+transformer/python
+scrapper/python/
+.terraform*
+terraform*

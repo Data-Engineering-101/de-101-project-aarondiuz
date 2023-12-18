@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "secretsmanager:GetSecretValue",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": [
+                "arn:aws:secretsmanager:us-east-1:693071886825:secret:nike-project-secrets-XOs2BE",
+                "arn:aws:logs:us-east-1:693071886825:*",
+                "arn:aws:s3:::enroute-project/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:us-east-1:693071886825:log-group:/aws/lambda/Enroute-Nike-Transformer:*"
+        }
+    ]
+}
